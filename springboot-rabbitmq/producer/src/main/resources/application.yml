@@ -1,0 +1,10 @@
+server:
+  port: 8888
+#  rabbitmq配置
+spring:
+  rabbitmq:
+    username: admin
+    password: admin
+    virtual-host: /
+    host: 192.168.92.130
+    port: 5672
