@@ -37,5 +37,21 @@ class ProducerApplicationTests {
             setOrderName("订单一号");
         }});
     }
+    @Test
+    void test03() {
+        orderService.pushMsgWithTtl(new Order(){{
+            setNum(80);
+            setPrice(80.0);
+            setOrderName("订单一号");
+        }});
+    }
+    @Test
+    void test04() {
+        orderService.pushMsgWithMessageTtl(new Order(){{
+            setNum(80);
+            setPrice(80.0);
+            setOrderName("订单一号");
+        }});
+    }
 
 }
