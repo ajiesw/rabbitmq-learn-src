@@ -34,6 +34,10 @@ public class RabbitMqTTLConfig {
         Map<String, Object> map = new HashMap<>();
         // 设置过期时间
         map.put("x-message-ttl", 5000);
+//        // 设置接收的最大信息数
+//        map.put("x-max-length", 5);
+//        // 设置超过最大长度后处理方式，reject-publish模式不会发送到死信队列中
+//        map.put("x-overflow", "reject-publish");
         // 设置死信交换机配置
         map.put("x-dead-letter-exchange", "dead_direct_exchange");
         // fanout模式的死信交换机不用配置

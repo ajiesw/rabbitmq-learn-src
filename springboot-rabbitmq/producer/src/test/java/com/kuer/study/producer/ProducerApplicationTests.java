@@ -54,4 +54,15 @@ class ProducerApplicationTests {
         }});
     }
 
+    @Test
+    void test05() {
+        for (int i = 0; i < 11; i++) {
+            orderService.pushMsgWithTtl(new Order(){{
+                setNum(80);
+                setPrice(80.0);
+                setOrderName("订单一号");
+            }});
+        }
+    }
+
 }
