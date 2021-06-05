@@ -31,9 +31,13 @@ public class RabbitMqTTLConfig {
      */
     @Bean
     public Queue ttlDirectQueue(){
-        // 设置过期时间
         Map<String, Object> map = new HashMap<>();
+        // 设置过期时间
         map.put("x-message-ttl", 5000);
+        // 设置死信交换机配置
+        map.put("x-dead-letter-exchange", "dead_direct_exchange");
+        // fanout模式的死信交换机不用配置
+        map.put("x-dead-letter-routing-key", "dead");
         return new Queue("ttl.direct.queue", true, false, false, map);
     }
 
