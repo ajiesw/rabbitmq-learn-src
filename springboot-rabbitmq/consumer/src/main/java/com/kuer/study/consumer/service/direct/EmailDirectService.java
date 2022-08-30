@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class EmailDirectService {
 
     @RabbitHandler
-    public void receiveMessage(String message){
+    public void receiveMessage(String message) {
         System.out.println("email message is:" + message);
     }
 }

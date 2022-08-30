@@ -12,25 +12,27 @@ import java.util.Map;
 
 /**
  * 设置队列过期时间
+ *
  * @author kuer
  */
 @Configuration
 public class RabbitMqTTLConfig {
 
     private String exchangeName = "TTL_direct_exchange";
+
     /**
      * 注册direct模式的交换机
      */
     @Bean
-    public DirectExchange ttlExchange(){
+    public DirectExchange ttlExchange() {
         return new DirectExchange(exchangeName, true, false);
     }
 
     /**
-     *注册队列,设置队列过期时间
+     * 注册队列,设置队列过期时间
      */
     @Bean
-    public Queue ttlDirectQueue(){
+    public Queue ttlDirectQueue() {
         Map<String, Object> map = new HashMap<>();
         // 设置过期时间
         map.put("x-message-ttl", 5000);
@@ -49,7 +51,7 @@ public class RabbitMqTTLConfig {
      * 绑定关系
      */
     @Bean
-    public Binding ttlDirectBinding(){
+    public Binding ttlDirectBinding() {
         return BindingBuilder.bind(ttlDirectQueue()).to(ttlExchange()).with("ttl");
     }
 }

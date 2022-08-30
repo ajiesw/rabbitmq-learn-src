@@ -20,10 +20,10 @@ public class OrderService {
 
     /**
      * 广播信息
+     *
      * @param order
      */
-    public void pushMsg(Order order){
-
+    public void pushMsg(Order order) {
         String orderStr = JSON.toJSONString(order);
         String exchangeName = "fanout_order_exchange";
         String routingKey = "";
@@ -32,9 +32,10 @@ public class OrderService {
 
     /**
      * 多播
+     *
      * @param order
      */
-    public void pushMsgWithDirect(Order order){
+    public void pushMsgWithDirect(Order order) {
 
         String orderStr = JSON.toJSONString(order);
         String exchangeName = "direct_order_exchange";
@@ -44,9 +45,10 @@ public class OrderService {
 
     /**
      * 匹配组播
+     *
      * @param order
      */
-    public void pushMsgWithTopic(Order order){
+    public void pushMsgWithTopic(Order order) {
 
         String orderStr = JSON.toJSONString(order);
         String exchangeName = "topic_order_exchange";
@@ -56,9 +58,10 @@ public class OrderService {
 
     /**
      * 向ttl队列发送
+     *
      * @param order
      */
-    public void pushMsgWithTtl(Order order){
+    public void pushMsgWithTtl(Order order) {
         String orderStr = JSON.toJSONString(order);
         String exchangeName = "TTL_direct_exchange";
         String routingKey = "ttl";
@@ -67,9 +70,10 @@ public class OrderService {
 
     /**
      * 给消息添加ttl过期时间
+     *
      * @param order
      */
-    public void pushMsgWithMessageTtl(Order order){
+    public void pushMsgWithMessageTtl(Order order) {
 
         String orderStr = JSON.toJSONString(order);
         String exchangeName = "topic_order_exchange";

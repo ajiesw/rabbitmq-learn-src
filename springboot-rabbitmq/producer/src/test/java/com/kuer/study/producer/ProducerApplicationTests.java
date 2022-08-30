@@ -14,7 +14,7 @@ class ProducerApplicationTests {
 
     @Test
     void contextLoads() {
-        orderService.pushMsg(new Order(){{
+        orderService.pushMsg(new Order() {{
             setNum(80);
             setPrice(80.0);
             setOrderName("订单一号");
@@ -23,31 +23,34 @@ class ProducerApplicationTests {
 
     @Test
     void test01() {
-        orderService.pushMsgWithDirect(new Order(){{
+        orderService.pushMsgWithDirect(new Order() {{
             setNum(80);
             setPrice(80.0);
             setOrderName("订单一号");
         }});
     }
+
     @Test
     void test02() {
-        orderService.pushMsgWithTopic(new Order(){{
+        orderService.pushMsgWithTopic(new Order() {{
             setNum(80);
             setPrice(80.0);
             setOrderName("订单一号");
         }});
     }
+
     @Test
     void test03() {
-        orderService.pushMsgWithTtl(new Order(){{
+        orderService.pushMsgWithTtl(new Order() {{
             setNum(80);
             setPrice(80.0);
             setOrderName("订单一号");
         }});
     }
+
     @Test
     void test04() {
-        orderService.pushMsgWithMessageTtl(new Order(){{
+        orderService.pushMsgWithMessageTtl(new Order() {{
             setNum(80);
             setPrice(80.0);
             setOrderName("订单一号");
@@ -57,7 +60,7 @@ class ProducerApplicationTests {
     @Test
     void test05() {
         for (int i = 0; i < 11; i++) {
-            orderService.pushMsgWithTtl(new Order(){{
+            orderService.pushMsgWithTtl(new Order() {{
                 setNum(80);
                 setPrice(80.0);
                 setOrderName("订单一号");

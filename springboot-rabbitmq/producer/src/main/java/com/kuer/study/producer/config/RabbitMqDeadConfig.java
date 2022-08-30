@@ -9,25 +9,27 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 设置死信交换机
+ *
  * @author kuer
  */
 @Configuration
 public class RabbitMqDeadConfig {
 
     private String exchangeName = "dead_direct_exchange";
+
     /**
      * 注册direct模式的交换机
      */
     @Bean
-    public DirectExchange deadExchange(){
+    public DirectExchange deadExchange() {
         return new DirectExchange(exchangeName, true, false);
     }
 
     /**
-     *注册队列,设置队列过期时间
+     * 注册队列,设置队列过期时间
      */
     @Bean
-    public Queue deadDirectQueue(){
+    public Queue deadDirectQueue() {
         return new Queue("dead.queue", true, false, false);
     }
 
@@ -35,7 +37,7 @@ public class RabbitMqDeadConfig {
      * 绑定关系
      */
     @Bean
-    public Binding deadDirectBinding(){
+    public Binding deadDirectBinding() {
         return BindingBuilder.bind(deadDirectQueue()).to(deadExchange()).with("dead");
     }
 }

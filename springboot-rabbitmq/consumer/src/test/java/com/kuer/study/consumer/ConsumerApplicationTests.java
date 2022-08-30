@@ -8,6 +8,7 @@ class ConsumerApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RabbitListener(queues = {"wei.fanout.queue"})
 public class WeiService {
     @RabbitHandler
-    public void receiveMessage(String message){
+    public void receiveMessage(String message) {
         System.out.println("wei message is:" + message);
     }
 }

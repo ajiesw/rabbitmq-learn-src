@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 注解绑定
+ *
  * @author kuer
  */
 @Service
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 ))
 public class SmsTopicService {
     @RabbitHandler
-    public void receiveMessage(String message){
+    public void receiveMessage(String message) {
         System.out.println("sms message is:" + message);
     }
 }

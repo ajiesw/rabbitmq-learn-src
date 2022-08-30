@@ -9,7 +9,7 @@ import java.io.IOException;
  */
 public class Work1 {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         new Thread(runnable, "work1").start();
     }
 
@@ -57,7 +57,7 @@ public class Work1 {
                 e.printStackTrace();
             } finally {
                 // 关闭通道
-                if (channel != null && channel.isOpen()){
+                if (channel != null && channel.isOpen()) {
                     try {
                         channel.close();
                     } catch (Exception e) {
@@ -65,7 +65,7 @@ public class Work1 {
                     }
                 }
                 // 关闭连接
-                if (connection != null && connection.isOpen()){
+                if (connection != null && connection.isOpen()) {
                     try {
                         connection.close();
                     } catch (IOException e) {

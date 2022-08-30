@@ -9,7 +9,7 @@ import java.util.concurrent.TimeoutException;
  * @author kuer
  */
 public class Consumer {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Connection connection = null;
         Channel channel = null;
         try {
@@ -43,7 +43,7 @@ public class Consumer {
             e.printStackTrace();
         } finally {
             // 关闭通道
-            if (channel != null && channel.isOpen()){
+            if (channel != null && channel.isOpen()) {
                 try {
                     channel.close();
                 } catch (Exception e) {
@@ -51,7 +51,7 @@ public class Consumer {
                 }
             }
             // 关闭连接
-            if (connection != null && connection.isOpen()){
+            if (connection != null && connection.isOpen()) {
                 try {
                     connection.close();
                 } catch (IOException e) {

@@ -12,7 +12,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Producer {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Connection connection = null;
         Channel channel = null;
         try {
@@ -37,9 +37,9 @@ public class Producer {
             String exchangeType = "direct";
             channel.exchangeDeclare(exchangeName, exchangeType, true);
             // 自定义队列
-            channel.queueDeclare("q4", true,  false, false, null);
-            channel.queueDeclare("q5", true,  false, false, null);
-            channel.queueDeclare("q6", true,  false, false, null);
+            channel.queueDeclare("q4", true, false, false, null);
+            channel.queueDeclare("q5", true, false, false, null);
+            channel.queueDeclare("q6", true, false, false, null);
 
             // 绑定交换机和队列
             channel.queueBind("q4", exchangeName, "r4");
@@ -57,7 +57,7 @@ public class Producer {
             e.printStackTrace();
         } finally {
             // 关闭通道
-            if (channel != null && channel.isOpen()){
+            if (channel != null && channel.isOpen()) {
                 try {
                     channel.close();
                 } catch (Exception e) {
@@ -65,7 +65,7 @@ public class Producer {
                 }
             }
             // 关闭连接
-            if (connection != null && connection.isOpen()){
+            if (connection != null && connection.isOpen()) {
                 try {
                     connection.close();
                 } catch (IOException e) {

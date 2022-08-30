@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RabbitListener(queues = {"sms.fanout.queue"})
 public class SmsService {
     @RabbitHandler
-    public void receiveMessage(String message){
+    public void receiveMessage(String message) {
         System.out.println("sms message is:" + message);
     }
 }
